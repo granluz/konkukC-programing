@@ -1,47 +1,26 @@
-#include<iostream>
+#include "dan.h"
+#include <string>
+#include <sstream>
 
-using namespace std;
 
 int main() {
-
-	int num1, num2;
-	cout << "구구단의 범위를 입력 하십시오. :";
-	cin >> num1 >> num2;
+	//dan();
+	cout << "이름 국어성적 영어성적 수학성적을 입력 해주세요 : ";
+	string str1;
+	getline(cin, str1);
 	
-	if (num1 > num2)
+	//끊어서 문자열 단위로 추출하고싶다
+	stringstream ss;
+	ss.str(str1);
+	string name;
+	ss >> name;
+	int score = 0;
+	int sum = 0;
+	while (ss >> score)
 	{
-		cout << "첫 번째 입력 숫자가 더 크므로, 시작과 끝의 값을 바꿔서 출력할까요(y/n)?";
-		char a;
-		cin >> a;
-		if (a == 'y')
-		{
-			int temp = num1;
-			num1 = num2;
-			num2 = temp;
-			for (int i = 1; i <= 9; i++)
-			{
-				for (int j = num1; j <= num2; j++)
-				{
-					cout << j << " * " << i << " = " << i * j << '\t';
-				}
-				cout << endl;
-			}
-		}
-		else if(a != 'y')
-		{
-			return 0;
-		}
+		sum += score;			
 	}
-	else
-	{
-		for (int i = 1; i <= 9; i++)
-		{
-			for (int j = num1; j <= num2; j++)
-			{
-				cout << j << " * " << i << " = " << i * j << '\t';
-			}
-			cout << endl;
-		}
-	}
+	cout << name << " : " << sum;
+	
 	return 0;
 }
