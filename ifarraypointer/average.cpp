@@ -1,6 +1,6 @@
 # include "menu.h"
 #include "average.h"
-
+//학생 5명의 성적을 입력 받고, 평균을 출력하시오
 #define SIZE 5
 void average()
 {
