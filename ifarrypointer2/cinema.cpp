@@ -16,8 +16,15 @@ void reservation()
 	char select;	
 	int price= 0;
 	while (true)
-	{
+	{		
 		system("cls");
+		/*
+		for (int i = 0; i < 6; i++)
+		{
+			cout << i + 1;
+		}
+		cout << endl;
+		*/		
 		for (int i = 0; i < a; i++)
 		{
 			cout << alpha[i] << " ";
@@ -59,6 +66,7 @@ void reservation()
 				{
 					cinema1[x - 'A'][y - '1'] = 0;
 					cout << "예약을 취소하였습니다." << endl;
+					price = price - 12000;
 				}
 				else if (select == 'N')
 				{
