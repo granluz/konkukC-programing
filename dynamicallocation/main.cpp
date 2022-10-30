@@ -4,13 +4,21 @@ using namespace std;
 
 int main()
 {
-	int* pi; // 동적 메모리를 가리키는 포인터
-
-	pi = new int; //1. 동적 메모리 할당
-
-	*pi = 100; // 2. 동적 메모리 사용
-
-	delete pi; // 3. 동적 메모리 반납
-
+	int col, row;
+	cin >> col >> row;
+	int** parr = new int*[row];
+	for (int i = 0; i < row; i++)
+	{
+		parr[i] = new int[col];
+		for (int j = 0; j < col; j++)
+		{
+			parr[i][j] = j;
+		}
+	}
+	
+	for (int i = 0; i < row; i++)
+		delete[] parr[i];//방 삭제
+	delete[] parr;//층 삭제
+	
 	return 0;
 }
